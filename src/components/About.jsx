@@ -1,0 +1,119 @@
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useInView } from '../hooks/useInView'
+
+export default function About() {
+  const sectionRef = useRef(null)
+  const [textRef, textInView] = useInView({ threshold: 0.15 })
+  const [imgRef, imgInView] = useInView({ threshold: 0.1 })
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+
+  const imgY = useTransform(scrollYProgress, [0, 1], [50, -50])
+  const imgScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.08, 1, 1.04])
+
+  return (
+    <section id="about" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div ref={textRef} className="lg:col-span-5 xl:col-span-5 text-center lg:text-left">
+            <motion.p
+              className="label-micro text-[rgba(245,245,240,0.35)] mb-6 md:mb-8"
+              initial={{ opacity: 0, y: 12 }}
+              animate={textInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7 }}
+            >
+              About Vari Park
+            </motion.p>
+
+            <div className="overflow-hidden mb-2">
+              <motion.h2
+                className="text-display text-[clamp(32px,5vw,56px)] text-[#f5f5f0] leading-[1]"
+                initial={{ y: '110%', opacity: 0 }}
+                animate={textInView ? { y: '0%', opacity: 1 } : {}}
+                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                More Than
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden mb-2">
+              <motion.h2
+                className="text-display text-[clamp(32px,5vw,56px)] text-[#f5f5f0] leading-[1]"
+                initial={{ y: '110%', opacity: 0 }}
+                animate={textInView ? { y: '0%', opacity: 1 } : {}}
+                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              >
+                A Destination.
+              </motion.h2>
+            </div>
+
+            <motion.div
+              className="divider-line my-8 md:my-10 mx-auto lg:mx-0"
+              initial={{ scaleX: 0 }}
+              animate={textInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformOrigin: 'center' }}
+            />
+
+            <motion.p
+              className="text-editorial text-[rgba(245,245,240,0.45)] text-[13px] md:text-[14px] max-w-md mx-auto lg:mx-0 mb-5"
+              initial={{ opacity: 0, y: 16 }}
+              animate={textInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Nestled on Palani Road in the heart of Dindigul, Vari Park has been welcoming guests since 2007 with warmth, comfort, and genuine Tamil Nadu hospitality.
+            </motion.p>
+
+            <motion.p
+              className="text-editorial text-[rgba(245,245,240,0.45)] text-[13px] md:text-[14px] max-w-md mx-auto lg:mx-0 mb-10 md:mb-14"
+              initial={{ opacity: 0, y: 16 }}
+              animate={textInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Every detail is designed to make your stay effortless — from our well-appointed rooms and curated dining to our bar and wellness spaces.
+            </motion.p>
+
+            <motion.div
+              className="flex justify-center lg:justify-start gap-10 md:gap-14"
+              initial={{ opacity: 0, y: 16 }}
+              animate={textInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              {[
+                { num: '7.7', label: 'Guest Rating' },
+                { num: '18+', label: 'Years' },
+                { num: '627', label: 'Reviews' },
+              ].map(s => (
+                <div key={s.label}>
+                  <p className="text-[clamp(24px,3vw,36px)] font-bold text-[#f5f5f0] leading-none mb-1.5">{s.num}</p>
+                  <p className="text-[8px] md:text-[9px] text-[rgba(245,245,240,0.25)] tracking-[0.12em] uppercase">{s.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div ref={imgRef} className="lg:col-span-7 xl:col-span-7 relative">
+            <motion.div style={{ y: imgY, scale: imgScale }}>
+              <motion.div
+                className="overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
+                initial={{ clipPath: 'inset(0 100% 0 0)' }}
+                animate={imgInView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
+                transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80&auto=format"
+                  alt="Vari Park hotel room interior"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
