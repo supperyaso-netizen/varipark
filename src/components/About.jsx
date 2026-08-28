@@ -83,7 +83,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               {[
-                { num: '7.7', label: 'Guest Rating' },
+                { num: '4.5/5', label: 'Guest Rating' },
                 { num: '18+', label: 'Years' },
                 { num: '627', label: 'Reviews' },
               ].map(s => (
