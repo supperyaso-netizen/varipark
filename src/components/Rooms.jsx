@@ -9,7 +9,7 @@ const rooms = [
     sqft: '225 sq.ft',
     description: 'Elegantly appointed with modern amenities, city views, and everything you need for a comfortable stay.',
     amenities: ['Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining'],
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80&auto=format',
+    image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243173/vari-park-comfort-stay-dindigul-pic-7.JPEG',
   },
   {
     name: 'Deluxe King',
@@ -17,7 +17,7 @@ const rooms = [
     sqft: '280 sq.ft',
     description: 'Spacious comfort with premium bedding, enhanced amenities, and thoughtful touches for the discerning traveler.',
     amenities: ['King Bed', 'Mini Bar', 'Safe', 'Tea Maker', 'Premium Linens'],
-    image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200&q=80&auto=format',
+    image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365487/vari-park-comfort-stay-dindigul-pic-8.JPEG',
   },
   {
     name: 'King Studio',
@@ -25,7 +25,7 @@ const rooms = [
     sqft: '320 sq.ft',
     description: 'A generous living space combining comfort and style, ideal for extended stays and families.',
     amenities: ['King Bed', 'Sitting Area', 'Work Station', 'Blackout Curtains', 'Streaming'],
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d955e30db?w=1200&q=80&auto=format',
+    image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247248/1247248960/vari-park-comfort-stay-dindigul-pic-9.JPEG',
   },
   {
     name: 'Junior Suite',
@@ -33,7 +33,7 @@ const rooms = [
     sqft: '350 sq.ft',
     description: 'The finest accommodation featuring a separate living area and premium furnishings throughout.',
     amenities: ['Separate Living Area', 'King Bed', 'Sofa Bed', 'Luxury Bath', 'Concierge'],
-    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=80&auto=format',
+    image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250934/1250934655/vari-park-comfort-stay-dindigul-pic-10.JPEG',
   },
 ]
 

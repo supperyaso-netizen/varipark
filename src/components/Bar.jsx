@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 
 const barImages = [
-  { src: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&q=80&auto=format', alt: 'Cocktails and fine spirits' },
-  { src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80&auto=format', alt: 'Handcrafted cocktails' },
-  { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80&auto=format', alt: 'Premium bar setup' },
-  { src: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80&auto=format', alt: 'Bar ambiance evening' },
-  { src: 'https://images.unsplash.com/photo-1560512823-829485b8bf24?w=800&q=80&auto=format', alt: 'Whiskey collection' },
+  { src: 'https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024', alt: 'Cocktails and fine spirits' },
+  { src: 'https://lh3.ggpht.com/p/AC9h4npmz9R1_c-vHEXiShvxPURJXHj1CxEYv2rRgasKfLlqlQBaKJ7DY9me1AKpgspN3s3lS3dw0v4AGR7Lz_DccQxpHB38uoHjcYAcaC2mfIWWn1YRuBraNqUNlDA8QqJ5OqAGU6yR0Q=s1024', alt: 'Handcrafted cocktails' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250928/1250928535/vari-park-comfort-stay-dindigul-pic-3.JPEG', alt: 'Premium bar setup' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247244/1247244316/vari-park-comfort-stay-dindigul-pic-2.JPEG', alt: 'Bar ambiance evening' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11624/1162456/1162456260/vari-park-comfort-stay-dindigul-pic-11.JPEG', alt: 'Whiskey collection' },
 ]
 
 export default function Bar({ onImageClick }) {
@@ -27,7 +27,7 @@ export default function Bar({ onImageClick }) {
       <div className="relative h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden">
         <motion.div style={{ y: bgY }} className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1920&q=80&auto=format"
+            src="https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024"
             alt="Bar atmosphere"
             className="w-full h-[120%] object-cover opacity-25"
             loading="lazy"

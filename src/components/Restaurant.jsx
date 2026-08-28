@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80&auto=format', alt: 'Restaurant interior ambiance' },
-  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format', alt: 'Fine dining plate presentation' },
-  { src: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80&auto=format', alt: 'Chef preparing dishes' },
-  { src: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80&auto=format', alt: 'Restaurant table setting' },
-  { src: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80&auto=format', alt: 'Culinary experience' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365454/vari-park-comfort-stay-dindigul-pic-1.JPEG', alt: 'Restaurant interior ambiance' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247244/1247244316/vari-park-comfort-stay-dindigul-pic-2.JPEG', alt: 'Fine dining plate presentation' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250928/1250928535/vari-park-comfort-stay-dindigul-pic-3.JPEG', alt: 'Chef preparing dishes' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243197/vari-park-comfort-stay-dindigul-pic-4.JPEG', alt: 'Restaurant table setting' },
+  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250909/1250909032/vari-park-comfort-stay-dindigul-pic-5.JPEG', alt: 'Culinary experience' },
 ]
 
 export default function Restaurant({ onImageClick }) {
@@ -27,7 +27,7 @@ export default function Restaurant({ onImageClick }) {
       <div className="relative h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden">
         <motion.div style={{ y: bgY }} className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80&auto=format"
+            src="https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024"
             alt="Restaurant interior"
             className="w-full h-[120%] object-cover opacity-30"
             loading="lazy"

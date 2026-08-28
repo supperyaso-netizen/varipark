@@ -33,10 +33,10 @@ export default function Spa({ onImageClick }) {
                 initial={{ clipPath: 'inset(10% 0 10% 0)' }}
                 animate={imgInView ? { clipPath: 'inset(0% 0 0% 0)' } : {}}
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => onImageClick?.([{ src: 'https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=900&q=80&auto=format', alt: 'Spa wellness' }], 0)}
+                onClick={() => onImageClick?.([{ src: 'https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024', alt: 'Spa wellness' }], 0)}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=900&q=80&auto=format"
+                  src="https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024"
                   alt="Spa at Vari Park"
                   className="w-full h-full object-cover"
                   loading="lazy"

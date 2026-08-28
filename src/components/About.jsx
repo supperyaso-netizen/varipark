@@ -104,7 +104,7 @@ export default function About() {
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80&auto=format"
+                  src="https://lh3.ggpht.com/p/AF1QipOa6Flb9Fv-mbnQFbt1XL5TXdeFL3E-7MUCVL_x=s1024"
                   alt="Vari Park hotel room interior"
                   className="w-full h-full object-cover"
                   loading="lazy"
