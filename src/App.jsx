@@ -38,9 +38,9 @@ export default function App() {
       <SectionDivider />
       <About />
       <SectionDivider />
-      <Restaurant onImageClick={openGallery} />
-      <SectionDivider />
       <Rooms onImageClick={openGallery} />
+      <SectionDivider />
+      <Restaurant onImageClick={openGallery} />
       <SectionDivider />
       <Bar onImageClick={openGallery} />
       <SectionDivider />
