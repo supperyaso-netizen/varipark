@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 
+const spaImage = 'https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024'
+
 export default function Spa({ onImageClick }) {
   const sectionRef = useRef(null)
   const [headingRef, headingInView] = useInView({ threshold: 0.15 })
@@ -27,19 +29,20 @@ export default function Spa({ onImageClick }) {
       <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div ref={imgRef} className="lg:col-span-5 order-2 lg:order-1">
-            <motion.div style={{ y: imgY }}>
+            <motion.div style={{ y: imgY }} className="will-change-transform">
               <motion.div
                 className="overflow-hidden aspect-[3/4] cursor-pointer"
                 initial={{ clipPath: 'inset(10% 0 10% 0)' }}
                 animate={imgInView ? { clipPath: 'inset(0% 0 0% 0)' } : {}}
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => onImageClick?.([{ src: 'https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024', alt: 'Spa wellness' }], 0)}
+                onClick={() => onImageClick?.([{ src: spaImage, alt: 'Spa wellness' }], 0)}
               >
                 <img
-                  src="https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024"
+                  src={spaImage}
                   alt="Spa at Vari Park"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </motion.div>
             </motion.div>

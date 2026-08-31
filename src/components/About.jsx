@@ -96,7 +96,7 @@ export default function About() {
           </div>
 
           <div ref={imgRef} className="lg:col-span-7 xl:col-span-7 relative">
-            <motion.div style={{ y: imgY, scale: imgScale }}>
+            <motion.div style={{ y: imgY, scale: imgScale }} className="will-change-transform">
               <motion.div
                 className="overflow-hidden aspect-[4/5] lg:aspect-[3/4]"
                 initial={{ clipPath: 'inset(0 100% 0 0)' }}
@@ -108,6 +108,7 @@ export default function About() {
                   alt="Vari Park hotel room interior"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </motion.div>
             </motion.div>

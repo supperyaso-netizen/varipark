@@ -35,6 +35,19 @@ export default function FullscreenGallery({ images, startIndex, onClose }) {
     }
   }
 
+  useEffect(() => {
+    const preload = []
+    ;[current - 1, current + 1].forEach((i) => {
+      const idx = (i + images.length) % images.length
+      if (idx !== current) {
+        const img = new Image()
+        img.src = images[idx].src
+        preload.push(img)
+      }
+    })
+    return () => { preload.forEach(i => { i.src = '' }) }
+  }, [current, images])
+
   return (
     <motion.div
       className="fixed inset-0 z-[150] bg-[#050505] flex items-center justify-center"

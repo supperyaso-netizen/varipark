@@ -10,10 +10,40 @@ const galleryImages = [
   { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250909/1250909032/vari-park-comfort-stay-dindigul-pic-5.JPEG', alt: 'Culinary experience' },
 ]
 
+function GalleryItem({ img, index, inView, onImageClick }) {
+  return (
+    <motion.div
+      className="relative flex-shrink-0 w-[72vw] sm:w-[44vw] aspect-[3/4] overflow-hidden cursor-pointer snap-center md:flex-1 md:max-w-[260px]"
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.1 + index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      onClick={() => onImageClick?.(galleryImages, index)}
+    >
+      <img
+        src={img.src}
+        alt={img.alt}
+        className="w-full h-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.05]"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,5,0.6)] via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between opacity-0 hover:opacity-100 transition-opacity duration-500">
+        <p className="text-[10px] font-medium text-[rgba(245,245,240,0.7)] tracking-[0.1em] uppercase">
+          {img.alt}
+        </p>
+        <span className="text-[9px] font-medium text-[rgba(245,245,240,0.4)] tracking-[0.15em]">
+          0{index + 1}
+        </span>
+      </div>
+      <div className="absolute inset-0 border border-[rgba(245,245,240,0.04)] pointer-events-none" />
+    </motion.div>
+  )
+}
+
 export default function Restaurant({ onImageClick }) {
   const sectionRef = useRef(null)
   const [headingRef, headingInView] = useInView({ threshold: 0.15 })
-  const [galleryRef, galleryInView] = useInView({ threshold: 0.1 })
+  const [galleryRef, galleryInView] = useInView({ threshold: 0.08 })
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -25,12 +55,13 @@ export default function Restaurant({ onImageClick }) {
   return (
     <section id="restaurant" ref={sectionRef} className="relative bg-[#0a0908] overflow-hidden">
       <div className="relative h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden">
-        <motion.div style={{ y: bgY }} className="absolute inset-0">
+        <motion.div style={{ y: bgY }} className="absolute inset-0 will-change-transform">
           <img
             src="https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024"
             alt="Restaurant interior"
             className="w-full h-[120%] object-cover opacity-30"
             loading="lazy"
+            decoding="async"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0908] via-[rgba(10,9,8,0.4)] to-[#0a0908]" />
@@ -110,31 +141,7 @@ export default function Restaurant({ onImageClick }) {
       <div ref={galleryRef} className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-24">
         <div className="flex gap-3 md:gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory md:overflow-visible md:flex-wrap md:justify-center">
           {galleryImages.map((img, i) => (
-            <motion.div
-              key={i}
-              className="relative flex-shrink-0 w-[72vw] sm:w-[44vw] aspect-[3/4] overflow-hidden cursor-pointer snap-center md:flex-1 md:max-w-[260px]"
-              initial={{ opacity: 0, y: 24 }}
-              animate={galleryInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => onImageClick?.(galleryImages, i)}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-[900ms] ease-out hover:scale-[1.05]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,5,0.6)] via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between opacity-0 hover:opacity-100 transition-opacity duration-500">
-                <p className="text-[10px] font-medium text-[rgba(245,245,240,0.7)] tracking-[0.1em] uppercase">
-                  {img.alt}
-                </p>
-                <span className="text-[9px] font-medium text-[rgba(245,245,240,0.4)] tracking-[0.15em]">
-                  0{i + 1}
-                </span>
-              </div>
-              <div className="absolute inset-0 border border-[rgba(245,245,240,0.04)] pointer-events-none" />
-            </motion.div>
+            <GalleryItem key={i} img={img} index={i} inView={galleryInView} onImageClick={onImageClick} />
           ))}
         </div>
       </div>

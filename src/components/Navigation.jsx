@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -15,23 +15,47 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('Home')
+  const observerRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 60)
-      const ids = ['contact', 'spa', 'bar', 'rooms', 'restaurant', 'about', 'hero']
-      for (const id of ids) {
-        const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= 200) {
-          const link = navLinks.find(l => l.href === `#${id}`)
-          if (link) setActiveLink(link.label)
-          return
-        }
-      }
-      setActiveLink('Home')
     }
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+
+    const ids = ['hero', 'about', 'rooms', 'restaurant', 'bar', 'spa', 'contact']
+    const visible = new Set()
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visible.add(entry.target.id)
+          } else {
+            visible.delete(entry.target.id)
+          }
+        })
+
+        for (const id of ids) {
+          if (visible.has(id)) {
+            const link = navLinks.find((l) => l.href === `#${id}`)
+            if (link) setActiveLink(link.label)
+            break
+          }
+        }
+      },
+      { threshold: 0, rootMargin: '-40% 0px -55% 0px' }
+    )
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observerRef.current.observe(el)
+    })
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      observerRef.current?.disconnect()
+    }
   }, [])
 
   useEffect(() => {
@@ -94,12 +118,14 @@ export default function Navigation() {
           </div>
 
           <div className="hidden lg:block">
-            <button
-              onClick={() => scrollTo('#contact', 'Contact')}
+            <a
+              href="https://www.booking.com/hotel/in/vari-park.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[9px] font-medium tracking-[0.2em] uppercase text-[rgba(245,245,240,0.4)] border border-[rgba(245,245,240,0.1)] px-5 py-2.5 hover:text-[#f5f5f0] hover:border-[rgba(245,245,240,0.25)] transition-all duration-500"
             >
               Reserve
-            </button>
+            </a>
           </div>
 
           <button
@@ -160,12 +186,15 @@ export default function Navigation() {
                 transition={{ duration: 0.5, delay: 0.05 + navLinks.length * 0.04 }}
                 className="mt-4"
               >
-                <button
-                  onClick={() => scrollTo('#contact', 'Contact')}
+                <a
+                  href="https://www.booking.com/hotel/in/vari-park.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
                   className="text-[10px] font-medium tracking-[0.2em] uppercase text-[rgba(245,245,240,0.4)] border border-[rgba(245,245,240,0.1)] px-8 py-3 hover:text-[#f5f5f0] hover:border-[rgba(245,245,240,0.25)] transition-all duration-500"
                 >
                   Reserve
-                </button>
+                </a>
               </motion.div>
             </div>
 

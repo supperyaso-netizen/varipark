@@ -101,12 +101,13 @@ export default function Rooms({ onImageClick }) {
                   key={activeRoom}
                   src={room.image}
                   alt={room.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover will-change-transform"
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   loading="lazy"
+                  decoding="async"
                 />
               </AnimatePresence>
             </motion.div>
@@ -196,12 +197,17 @@ export default function Rooms({ onImageClick }) {
                   </div>
                 </div>
 
-                <button className="btn-primary">
+                <a
+                  href="https://www.booking.com/hotel/in/vari-park.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
                   <span>View Rooms</span>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </button>
+                </a>
               </motion.div>
             </AnimatePresence>
           </div>

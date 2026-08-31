@@ -48,6 +48,7 @@
   img {
     display: block;
     max-width: 100%;
+    content-visibility: auto;
   }
 
   a {
@@ -142,6 +143,7 @@
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    will-change: transform;
   }
 
   .btn-primary::before {

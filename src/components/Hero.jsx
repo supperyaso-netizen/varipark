@@ -23,7 +23,7 @@ export default function Hero({ ready }) {
   return (
     <section ref={containerRef} id="hero" className="relative h-screen min-h-[600px] overflow-hidden">
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 will-change-transform"
         style={{ scale: imgScale, y: imgY }}
       >
         <picture>
@@ -32,7 +32,8 @@ export default function Hero({ ready }) {
             src={heroImg}
             alt="Vari Park hotel exterior"
             className="w-full h-full object-cover"
-            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </picture>
       </motion.div>
@@ -40,7 +41,7 @@ export default function Hero({ ready }) {
       <div className="absolute inset-0 bg-[#050505]/30 mix-blend-multiply" />
 
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 will-change-opacity"
         style={{
           background: 'linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.3) 35%, rgba(5,5,5,0.75) 65%, rgba(5,5,5,1) 100%)',
           opacity: overlayOpacity,

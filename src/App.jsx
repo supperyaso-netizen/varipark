@@ -1,20 +1,25 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import LoadingScreen from './components/LoadingScreen'
-import About from './components/About'
-import Restaurant from './components/Restaurant'
-import Rooms from './components/Rooms'
-import Bar from './components/Bar'
-import Spa from './components/Spa'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import FullscreenGallery from './components/FullscreenGallery'
 import { useLenis } from './hooks/useLenis'
+
+const About = lazy(() => import('./components/About'))
+const Rooms = lazy(() => import('./components/Rooms'))
+const Restaurant = lazy(() => import('./components/Restaurant'))
+const Bar = lazy(() => import('./components/Bar'))
+const Spa = lazy(() => import('./components/Spa'))
+const Contact = lazy(() => import('./components/Contact'))
+const Footer = lazy(() => import('./components/Footer'))
+const FullscreenGallery = lazy(() => import('./components/FullscreenGallery'))
 
 function SectionDivider() {
   return <div className="h-px bg-gradient-to-r from-transparent via-[rgba(245,245,240,0.04)] to-transparent" />
+}
+
+function SectionFallback() {
+  return <div className="min-h-[40vh] bg-[#050505]" />
 }
 
 export default function App() {
@@ -35,19 +40,21 @@ export default function App() {
       {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
       <Navigation />
       <Hero ready={!loading} />
-      <SectionDivider />
-      <About />
-      <SectionDivider />
-      <Rooms onImageClick={openGallery} />
-      <SectionDivider />
-      <Restaurant onImageClick={openGallery} />
-      <SectionDivider />
-      <Bar onImageClick={openGallery} />
-      <SectionDivider />
-      <Spa onImageClick={openGallery} />
-      <SectionDivider />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<SectionFallback />}>
+        <SectionDivider />
+        <About />
+        <SectionDivider />
+        <Rooms onImageClick={openGallery} />
+        <SectionDivider />
+        <Restaurant onImageClick={openGallery} />
+        <SectionDivider />
+        <Bar onImageClick={openGallery} />
+        <SectionDivider />
+        <Spa onImageClick={openGallery} />
+        <SectionDivider />
+        <Contact />
+        <Footer />
+      </Suspense>
 
       <AnimatePresence>
         {gallery && (
