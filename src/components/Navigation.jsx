@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Rooms', href: '#rooms' },
   { label: 'Restaurant', href: '#restaurant' },
   { label: 'Bar', href: '#bar' },
+  { label: 'Halls', href: '#halls' },
   { label: 'Spa', href: '#spa' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -23,7 +24,7 @@ export default function Navigation() {
     }
     window.addEventListener('scroll', onScroll, { passive: true })
 
-    const ids = ['hero', 'about', 'rooms', 'restaurant', 'bar', 'spa', 'contact']
+    const ids = ['hero', 'about', 'rooms', 'restaurant', 'bar', 'halls', 'spa', 'contact']
     const visible = new Set()
 
     observerRef.current = new IntersectionObserver(

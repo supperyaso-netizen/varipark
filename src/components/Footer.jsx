@@ -5,6 +5,7 @@ const footerLinks = [
   { label: 'Restaurant', href: '#restaurant' },
   { label: 'Rooms', href: '#rooms' },
   { label: 'Bar', href: '#bar' },
+  { label: 'Halls', href: '#halls' },
   { label: 'Spa', href: '#spa' },
   { label: 'Contact', href: '#contact' },
 ]

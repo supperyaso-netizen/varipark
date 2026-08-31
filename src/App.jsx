@@ -9,6 +9,7 @@ const About = lazy(() => import('./components/About'))
 const Rooms = lazy(() => import('./components/Rooms'))
 const Restaurant = lazy(() => import('./components/Restaurant'))
 const Bar = lazy(() => import('./components/Bar'))
+const Halls = lazy(() => import('./components/Halls'))
 const Spa = lazy(() => import('./components/Spa'))
 const Contact = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
@@ -49,6 +50,8 @@ export default function App() {
         <Restaurant onImageClick={openGallery} />
         <SectionDivider />
         <Bar onImageClick={openGallery} />
+        <SectionDivider />
+        <Halls />
         <SectionDivider />
         <Spa onImageClick={openGallery} />
         <SectionDivider />
