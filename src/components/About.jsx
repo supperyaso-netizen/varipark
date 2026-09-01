@@ -15,14 +15,14 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-24 md:py-32 lg:py-40">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-28 max-sm:pt-36 max-sm:pb-44 md:py-32 lg:py-40">
         <motion.div
           ref={textRef}
           className="max-w-3xl mx-auto text-center will-change-transform"
           style={{ y: contentY }}
         >
           <motion.p
-            className="label-micro text-[rgba(245,245,240,0.35)] mb-6 md:mb-8"
+            className="label-micro text-[rgba(245,245,240,0.35)] mb-7 max-sm:mb-10 md:mb-8"
             initial={{ opacity: 0, y: 12 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
@@ -52,7 +52,7 @@ export default function About() {
           </div>
 
           <motion.div
-            className="divider-line my-9 md:my-11 mx-auto"
+            className="divider-line my-10 max-sm:my-14 md:my-11 mx-auto"
             initial={{ scaleX: 0 }}
             animate={textInView ? { scaleX: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -60,7 +60,7 @@ export default function About() {
           />
 
           <motion.p
-            className="text-editorial text-[rgba(245,245,240,0.45)] text-[14px] md:text-[15px] max-w-xl mx-auto mb-5 md:mb-6"
+            className="text-editorial text-[rgba(245,245,240,0.45)] text-[14px] md:text-[15px] max-w-xl mx-auto mb-6 max-sm:mb-8 md:mb-6"
             initial={{ opacity: 0, y: 16 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -69,7 +69,7 @@ export default function About() {
           </motion.p>
 
           <motion.p
-            className="text-editorial text-[rgba(245,245,240,0.45)] text-[14px] md:text-[15px] max-w-xl mx-auto mb-12 md:mb-16"
+            className="text-editorial text-[rgba(245,245,240,0.45)] text-[14px] md:text-[15px] max-w-xl mx-auto mb-14 max-sm:mb-20 md:mb-16"
             initial={{ opacity: 0, y: 16 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -78,7 +78,7 @@ export default function About() {
           </motion.p>
 
           <motion.div
-            className="flex justify-center items-stretch"
+            className="flex justify-center items-stretch max-sm:mb-10"
             initial={{ opacity: 0, y: 16 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
