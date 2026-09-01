@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -16,7 +16,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('Home')
-  const observerRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,37 +24,39 @@ export default function Navigation() {
     window.addEventListener('scroll', onScroll, { passive: true })
 
     const ids = ['hero', 'about', 'rooms', 'restaurant', 'bar', 'halls', 'spa', 'contact']
-    const visible = new Set()
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visible.add(entry.target.id)
-          } else {
-            visible.delete(entry.target.id)
-          }
-        })
-
-        for (const id of ids) {
-          if (visible.has(id)) {
-            const link = navLinks.find((l) => l.href === `#${id}`)
-            if (link) setActiveLink(link.label)
-            break
-          }
+    let ticking = false
+    let frameId = null
+    const detectActive = () => {
+      ticking = false
+      const probe = window.innerHeight * 0.5
+      let current = 'Home'
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        if (el.offsetTop <= probe && el.offsetTop + el.offsetHeight > probe) {
+          const link = navLinks.find((l) => l.href === `#${id}`)
+          if (link) current = link.label
+          break
         }
-      },
-      { threshold: 0, rootMargin: '-40% 0px -55% 0px' }
-    )
+      }
+      setActiveLink((prev) => (prev === current ? prev : current))
+    }
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observerRef.current.observe(el)
-    })
+    const onScrollActive = () => {
+      if (!ticking) {
+        ticking = true
+        frameId = requestAnimationFrame(detectActive)
+      }
+    }
+
+    window.addEventListener('scroll', onScrollActive, { passive: true })
+    detectActive()
 
     return () => {
       window.removeEventListener('scroll', onScroll)
-      observerRef.current?.disconnect()
+      window.removeEventListener('scroll', onScrollActive)
+      if (frameId !== null) cancelAnimationFrame(frameId)
     }
   }, [])
 
