@@ -100,19 +100,6 @@ export default function Spa({ onImageClick }) {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={headingInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.6 }}
-            >
-              <button className="btn-primary">
-                <span>Enter The Spa</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </motion.div>
           </div>
         </div>
       </div>
