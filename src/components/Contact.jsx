@@ -126,6 +126,30 @@ export default function Contact() {
                 </svg>
               </a>
             </motion.div>
+
+            <motion.div
+              className="mt-10 md:mt-14 p-5 md:p-6 bg-[rgba(245,245,240,0.02)] border border-[rgba(245,245,240,0.1)] flex items-start gap-4"
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.85 }}
+            >
+              <div className="flex items-center justify-center w-11 h-11 flex-none border border-[rgba(245,245,240,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="text-[#f5f5f0]">
+                  <path d="M5 11h14M5 11c-.9 0-1.7-.7-1.7-1.6S4.7 7.8 5.6 7.8h12.8c.9 0 1.6.7 1.6 1.6s-.8 1.6-1.7 1.6M5 11v5a1.5 1.5 0 001.5 1.5h2A1.5 1.5 0 0010 16v-2h4v2a1.5 1.5 0 001.5 1.5h2A1.5 1.5 0 0019 16v-5" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-[9px] font-medium text-[rgba(245,245,240,0.25)] tracking-[0.2em] uppercase mb-1.5">
+                  Guest Facilities
+                </p>
+                <p className="text-[15px] md:text-[16px] font-semibold text-[#f5f5f0] leading-snug mb-1">
+                  Complimentary Parking Available
+                </p>
+                <p className="text-editorial text-[rgba(245,245,240,0.4)] text-[12px] leading-relaxed">
+                  Free on-site parking for all guests, right at the hotel.
+                </p>
+              </div>
+            </motion.div>
           </div>
 
           <motion.div
