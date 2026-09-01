@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 max-sm:px-7 py-28 max-sm:pt-36 max-sm:pb-44 md:py-32 lg:py-40">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 max-sm:px-7 py-28 max-sm:pt-36 max-sm:pb-28 md:py-32 lg:py-40">
         <motion.div
           ref={textRef}
           className="max-w-3xl mx-auto text-center will-change-transform"
