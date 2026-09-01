@@ -1,13 +1,16 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
+import bar1 from '../assets/bar1.jpg'
+import bar2 from '../assets/bar2.jpg'
+import bar3 from '../assets/bar3.jpg'
+import bar4 from '../assets/bar4.jpg'
 
 const barImages = [
-  { src: 'https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024', alt: 'Cocktails and fine spirits' },
-  { src: 'https://lh3.ggpht.com/p/AC9h4npmz9R1_c-vHEXiShvxPURJXHj1CxEYv2rRgasKfLlqlQBaKJ7DY9me1AKpgspN3s3lS3dw0v4AGR7Lz_DccQxpHB38uoHjcYAcaC2mfIWWn1YRuBraNqUNlDA8QqJ5OqAGU6yR0Q=s1024', alt: 'Handcrafted cocktails' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250928/1250928535/vari-park-comfort-stay-dindigul-pic-3.JPEG', alt: 'Premium bar setup' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247244/1247244316/vari-park-comfort-stay-dindigul-pic-2.JPEG', alt: 'Bar ambiance evening' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11624/1162456/1162456260/vari-park-comfort-stay-dindigul-pic-11.JPEG', alt: 'Whiskey collection' },
+  { src: bar1, alt: 'Bar ambience' },
+  { src: bar2, alt: 'Craft cocktails' },
+  { src: bar3, alt: 'Fine spirits' },
+  { src: bar4, alt: 'Evening bar' },
 ]
 
 function GalleryItem({ img, index, inView, onImageClick }) {
