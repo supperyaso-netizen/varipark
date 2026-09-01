@@ -21,7 +21,7 @@ const rooms = [
     name: 'Family Room – 3 Bed',
     tagline: 'Comfort. Family. Together.',
     description: 'Designed for families, this generous room features three beds, a fridge, a separate living room and a sofa for shared comfort.',
-    amenities: ['3 Beds', 'Fridge', 'Living Room', 'Sofa'],
+    amenities: ['3 Beds', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining', 'Intercom', 'Breakfast', 'Snacks'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247248/1247248960/vari-park-comfort-stay-dindigul-pic-9.JPEG',
   },
   {
