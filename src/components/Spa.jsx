@@ -1,21 +1,11 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 
-const spaImage = 'https://lh3.ggpht.com/p/AC9h4npSbPsqEt1EeThe0HL4aIovTr0P81HRGTfRM75oEb0b0plkhwMHQiytpaS9OrATjPUv15w933ntZvMRFknD669jL2NcOnSYarDCicq5QJyI8dSKx0pWbV7VT86X6AazWSYAM1pQkw=s1024'
-
-export default function Spa({ onImageClick }) {
+export default function Spa() {
   const sectionRef = useRef(null)
   const [headingRef, headingInView] = useInView({ threshold: 0.15 })
-  const [imgRef, imgInView] = useInView({ threshold: 0.1 })
   const [featuresRef, featuresInView] = useInView({ threshold: 0.1 })
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const imgY = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   const features = [
     { title: 'Sauna & Steam', desc: 'Traditional facilities for deep relaxation and detoxification.' },
@@ -27,28 +17,8 @@ export default function Spa({ onImageClick }) {
   return (
     <section id="spa" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div ref={imgRef} className="lg:col-span-5 order-2 lg:order-1">
-            <motion.div style={{ y: imgY }} className="will-change-transform">
-              <motion.div
-                className="overflow-hidden aspect-[3/4] cursor-pointer"
-                initial={{ clipPath: 'inset(10% 0 10% 0)' }}
-                animate={imgInView ? { clipPath: 'inset(0% 0 0% 0)' } : {}}
-                transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => onImageClick?.([{ src: spaImage, alt: 'Spa wellness' }], 0)}
-              >
-                <img
-                  src={spaImage}
-                  alt="Spa at Vari Park"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-
-          <div ref={headingRef} className="lg:col-span-7 order-1 lg:order-2">
+        <div className="max-w-3xl mx-auto">
+          <div ref={headingRef} className="text-center">
             <motion.p
               className="label-micro text-[rgba(245,245,240,0.35)] mb-5 md:mb-6"
               initial={{ opacity: 0, y: 12 }}
@@ -70,21 +40,21 @@ export default function Spa({ onImageClick }) {
             </div>
 
             <motion.div
-              className="divider-line my-6 md:my-8"
+              className="divider-line mx-auto my-6 md:my-8"
               initial={{ scaleX: 0 }}
               animate={headingInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              style={{ transformOrigin: 'left' }}
             />
 
             <motion.p
-              className="text-editorial text-[rgba(245,245,240,0.45)] text-[13px] md:text-[14px] max-w-md leading-[1.8] mb-10 md:mb-14"
+              className="text-editorial text-[rgba(245,245,240,0.45)] text-[13px] md:text-[14px] max-w-md mx-auto leading-[1.8] mb-10 md:mb-14"
               initial={{ opacity: 0, y: 16 }}
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               After a day of travel or exploration, find your calm with our wellness facilities designed to relax your body and mind.
             </motion.p>
+          </div>
 
             <div ref={featuresRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 mb-10">
               {features.map((f, i) => (
@@ -102,7 +72,6 @@ export default function Spa({ onImageClick }) {
             </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }
