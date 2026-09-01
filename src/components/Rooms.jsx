@@ -224,6 +224,15 @@ export default function Rooms({ onImageClick }) {
                     Passenger lift available 24 hours
                   </p>
                 </div>
+
+                <div className="flex items-center gap-2 mt-3">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[rgba(245,245,240,0.3)] flex-none">
+                    <path d="M7 8h.01M4 6v6a2 2 0 002 2h6a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2zM7 16v1a2 2 0 002 2h6a2 2 0 002-2v-6a2 2 0 00-2-2h-1" />
+                  </svg>
+                  <p className="text-[10px] font-light text-[rgba(245,245,240,0.3)] tracking-[0.05em]">
+                    24-hour CCTV security on the premises
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
