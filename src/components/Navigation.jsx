@@ -29,12 +29,13 @@ export default function Navigation() {
     let frameId = null
     const detectActive = () => {
       ticking = false
-      const probe = window.innerHeight * 0.5
+      const probe = window.innerHeight * 0.4
       let current = 'Home'
       for (const id of ids) {
         const el = document.getElementById(id)
         if (!el) continue
-        if (el.offsetTop <= probe && el.offsetTop + el.offsetHeight > probe) {
+        const rect = el.getBoundingClientRect()
+        if (rect.top <= probe && rect.bottom > probe) {
           const link = navLinks.find((l) => l.href === `#${id}`)
           if (link) current = link.label
           break
