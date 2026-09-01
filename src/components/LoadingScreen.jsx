@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function LoadingScreen({ onComplete }) {
+export default function LoadingScreen({ onComplete, contentReady }) {
   const [progress, setProgress] = useState(0)
   const [leaving, setLeaving] = useState(false)
   const onCompleteRef = useRef(onComplete)
@@ -17,14 +17,20 @@ export default function LoadingScreen({ onComplete }) {
       if (value >= 100) {
         value = 100
         clearInterval(id)
-        setTimeout(() => setLeaving(true), 250)
-        setTimeout(() => onCompleteRef.current(), 700)
       }
       setProgress(value)
     }, 60)
 
     return () => clearInterval(id)
   }, [])
+
+  useEffect(() => {
+    if (progress >= 100 && contentReady && !leaving) {
+      const t1 = setTimeout(() => setLeaving(true), 250)
+      const t2 = setTimeout(() => onCompleteRef.current(), 700)
+      return () => { clearTimeout(t1); clearTimeout(t2) }
+    }
+  }, [progress, contentReady, leaving])
 
   return (
     <AnimatePresence>

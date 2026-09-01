@@ -1,8 +1,9 @@
-import { useState, useCallback, lazy, Suspense } from 'react'
+import { useState, useCallback, useEffect, lazy, Suspense } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import LoadingScreen from './components/LoadingScreen'
+import { preloadHeroImages } from './lib/preload'
 import { useLenis } from './hooks/useLenis'
 
 const About = lazy(() => import('./components/About'))
@@ -26,6 +27,7 @@ function SectionFallback() {
 export default function App() {
   useLenis()
   const [loading, setLoading] = useState(true)
+  const [ready, setReady] = useState(false)
   const [gallery, setGallery] = useState(null)
 
   const openGallery = useCallback((images, index) => {
@@ -36,9 +38,23 @@ export default function App() {
     setGallery(null)
   }, [])
 
+  useEffect(() => {
+    let cancelled = false
+    const preload = async () => {
+      await Promise.all([preloadHeroImages(), new Promise((r) => setTimeout(r, 1500))])
+      if (!cancelled) setReady(true)
+    }
+    preload()
+    return () => { cancelled = true }
+  }, [])
+
+  const handleLoaded = useCallback(() => {
+    if (ready) setLoading(false)
+  }, [ready])
+
   return (
     <div className="bg-[#050505] min-h-screen">
-      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+      {loading && <LoadingScreen onComplete={handleLoaded} contentReady={ready} />}
       <Navigation />
       <Hero ready={!loading} />
       <Suspense fallback={<SectionFallback />}>
