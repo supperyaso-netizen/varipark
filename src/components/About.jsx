@@ -52,7 +52,7 @@ export default function About() {
           </div>
 
           <motion.div
-            className="divider-line my-10 max-sm:my-14 md:my-11 mx-auto"
+            className="divider-line my-10 max-sm:mt-7 max-sm:mb-12 md:my-11 mx-auto"
             initial={{ scaleX: 0 }}
             animate={textInView ? { scaleX: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
