@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
-import restaurantBg from '../assets/restaurant-hero.jpg'
+import restaurantBg from '../assets/restaurantbg.jpg'
 
 const galleryImages = [
   { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365454/vari-park-comfort-stay-dindigul-pic-1.JPEG', alt: 'Restaurant interior ambiance' },
