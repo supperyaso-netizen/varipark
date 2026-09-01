@@ -173,7 +173,7 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.9 }}
           >
-            <a href="https://maps.google.com/?q=Vari+Park+Dindigul+Palani+Road" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href="https://maps.google.com/?q=Vari+Park+Dindigul+Palani+Road" target="_blank" rel="noopener noreferrer" className="btn-cta-mobile">
               <span>Get Directions</span>
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -183,7 +183,7 @@ export default function Contact() {
               href="https://www.booking.com/hotel/in/vari-park.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-cta-mobile"
             >
               <span>Book a Room</span>
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
