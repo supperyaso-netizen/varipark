@@ -94,12 +94,6 @@ export default function Contact() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.7 }}
             >
-              <a href="https://maps.google.com/?q=Vari+Park+Dindigul+Palani+Road" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                <span>Get Directions</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
               <a href="tel:+919150007201" className="btn-outline">
                 <span>Call Now</span>
               </a>
@@ -114,11 +108,17 @@ export default function Contact() {
                 </svg>
                 <span>WhatsApp</span>
               </a>
+              <a href="https://maps.google.com/?q=Vari+Park+Dindigul+Palani+Road" target="_blank" rel="noopener noreferrer" className="btn-primary hidden lg:inline-flex">
+                <span>Get Directions</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
               <a
                 href="https://www.booking.com/hotel/in/vari-park.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-primary hidden lg:inline-flex"
               >
                 <span>Book a Room</span>
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
@@ -165,6 +165,31 @@ export default function Contact() {
                 41, Palani Road, New Agraharam, Dindigul — 624001
               </p>
             </div>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 gap-3 mt-5 lg:hidden"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.9 }}
+          >
+            <a href="https://maps.google.com/?q=Vari+Park+Dindigul+Palani+Road" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <span>Get Directions</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="https://www.booking.com/hotel/in/vari-park.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <span>Book a Room</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-500">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>
