@@ -86,7 +86,7 @@ export default function About() {
             {[
               { num: '4.5/5', label: 'Guest Rating' },
               { num: '18+', label: 'Years' },
-              { num: '627', label: 'Reviews' },
+              { num: '600+', label: 'Reviews' },
             ].map((s, i) => (
               <div
                 key={s.label}
