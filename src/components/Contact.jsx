@@ -146,7 +146,7 @@ export default function Contact() {
                   Complimentary Parking Available
                 </p>
                 <p className="text-editorial text-[rgba(245,245,240,0.4)] text-[12px] leading-relaxed">
-                  Free on-site parking for all guests, right at the hotel.
+                  Free on-site parking for all guests.
                 </p>
               </div>
             </motion.div>

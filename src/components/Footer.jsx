@@ -77,6 +77,17 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <div className="border-t border-[rgba(245,245,240,0.04)]">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-6 md:py-8 flex flex-col items-center justify-center gap-1.5">
+          <p className="text-[9px] font-medium text-[rgba(245,245,240,0.3)] tracking-[0.25em] uppercase">
+            © 2026 VariPark. All Rights Reserved.
+          </p>
+          <p className="text-[9px] font-medium text-[rgba(245,245,240,0.18)] tracking-[0.25em] uppercase">
+            Crafted by Yaso
+          </p>
+        </div>
+      </div>
     </footer>
   )
 }

@@ -9,8 +9,6 @@ const halls = [
     name: 'Grand Hall',
     capacity: '115 – 130 Guests',
     tagline: 'Celebrations. Gatherings. Occasions.',
-    description:
-      'Our largest venue, crafted for weddings, corporate events, and grand celebrations. High ceilings, flexible seating, and full event support make every gathering effortless.',
     features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
     image: hall1Img,
   },
@@ -18,8 +16,6 @@ const halls = [
     name: 'Intimate Hall',
     capacity: '50 – 65 Guests',
     tagline: 'Quiet. Personal. Memorable.',
-    description:
-      'A refined space for smaller receptions, private dinners, and family milestones. Warm lighting and attentive service create an intimate, personal atmosphere.',
     features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
     image: hall2Img,
   },
@@ -67,14 +63,8 @@ function HallCard({ hall, index, inView }) {
         <h3 className="text-display text-[clamp(26px,3vw,36px)] text-[#f5f5f0] mb-1">
           {hall.name}
         </h3>
-        <p className="text-[11px] font-light text-[rgba(245,245,240,0.35)] tracking-[0.12em] uppercase mb-4">
+        <p className="text-[11px] font-light text-[rgba(245,245,240,0.35)] tracking-[0.12em] uppercase mb-5">
           {hall.tagline}
-        </p>
-
-        <div className="divider-line mb-5" />
-
-        <p className="text-editorial text-[rgba(245,245,240,0.45)] text-[13px] leading-[1.8] mb-6">
-          {hall.description}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-6">
