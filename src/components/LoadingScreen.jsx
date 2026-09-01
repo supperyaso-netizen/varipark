@@ -13,15 +13,15 @@ export default function LoadingScreen({ onComplete }) {
   useEffect(() => {
     let value = 0
     const id = setInterval(() => {
-      value += Math.random() * 18 + 8
+      value += Math.random() * 3 + 1.5
       if (value >= 100) {
         value = 100
         clearInterval(id)
-        setTimeout(() => setLeaving(true), 200)
-        setTimeout(() => onCompleteRef.current(), 650)
+        setTimeout(() => setLeaving(true), 250)
+        setTimeout(() => onCompleteRef.current(), 700)
       }
       setProgress(value)
-    }, 180)
+    }, 60)
 
     return () => clearInterval(id)
   }, [])
@@ -49,9 +49,13 @@ export default function LoadingScreen({ onComplete }) {
             </motion.div>
 
             <div className="w-36 md:w-44 h-[2px] bg-[rgba(245,245,240,0.12)] overflow-hidden rounded-full">
-              <motion.div
+              <div
                 className="h-full bg-[#f5f5f0] rounded-full"
-                style={{ scaleX: progress / 100, transformOrigin: 'left' }}
+                style={{
+                  transform: `scaleX(${progress / 100})`,
+                  transformOrigin: 'left',
+                  transition: 'transform 150ms linear',
+                }}
               />
             </div>
           </div>
