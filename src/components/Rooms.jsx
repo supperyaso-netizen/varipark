@@ -7,7 +7,7 @@ const rooms = [
     name: 'Deluxe Room',
     tagline: 'Comfort. Simplicity. Essential.',
     description: 'A thoughtfully appointed room offering modern comfort, city views, and everything you need for a restful stay.',
-    amenities: ['King Bed', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining'],
+    amenities: ['King Bed', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining', 'Intercom', 'Breakfast', 'Snacks'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243173/vari-park-comfort-stay-dindigul-pic-7.JPEG',
   },
   {
