@@ -8,21 +8,19 @@ const halls = [
   {
     name: 'Grand Hall',
     capacity: '115 – 130 Guests',
-    size: 'Spacious Ballroom',
     tagline: 'Celebrations. Gatherings. Occasions.',
     description:
       'Our largest venue, crafted for weddings, corporate events, and grand celebrations. High ceilings, flexible seating, and full event support make every gathering effortless.',
-    features: ['Flexible Seating', 'Stage & Sound', 'Event Staff', 'Dedicated Catering', 'Parking for 20 Cars'],
+    features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
     image: hall1Img,
   },
   {
     name: 'Intimate Hall',
     capacity: '50 – 65 Guests',
-    size: 'Elegant Function Room',
     tagline: 'Quiet. Personal. Memorable.',
     description:
       'A refined space for smaller receptions, private dinners, and family milestones. Warm lighting and attentive service create an intimate, personal atmosphere.',
-    features: ['Private Setting', 'Hosted Dinners', 'Custom Decor', 'Bridal Suite Access', 'In-House Catering'],
+    features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
     image: hall2Img,
   },
 ]
@@ -53,10 +51,14 @@ function HallCard({ hall, index, inView }) {
 
       <div className="p-7 md:p-9">
         <div className="flex flex-wrap items-center gap-3 mb-4">
-          <p className="text-[10px] font-medium text-[rgba(245,245,240,0.5)] tracking-[0.18em] uppercase">
-            {hall.size}
-          </p>
-          <span className="w-6 h-[1px] bg-[rgba(245,245,240,0.15)]" />
+          {hall.size && (
+            <>
+              <p className="text-[10px] font-medium text-[rgba(245,245,240,0.5)] tracking-[0.18em] uppercase">
+                {hall.size}
+              </p>
+              <span className="w-6 h-[1px] bg-[rgba(245,245,240,0.15)]" />
+            </>
+          )}
           <p className="text-[10px] font-medium text-[#f5f5f0] tracking-[0.18em] uppercase">
             {hall.capacity}
           </p>
