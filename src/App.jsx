@@ -40,12 +40,11 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false
-    const preload = async () => {
-      await Promise.all([preloadHeroImages(), new Promise((r) => setTimeout(r, 1500))])
+    const t = setTimeout(() => {
       if (!cancelled) setReady(true)
-    }
-    preload()
-    return () => { cancelled = true }
+    }, 1400)
+    preloadHeroImages()
+    return () => { cancelled = true; clearTimeout(t) }
   }, [])
 
   const handleLoaded = useCallback(() => {

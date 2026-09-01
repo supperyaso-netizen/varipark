@@ -32,6 +32,15 @@ export default function LoadingScreen({ onComplete, contentReady }) {
     }
   }, [progress, contentReady, leaving])
 
+  useEffect(() => {
+    if (leaving) return
+    const t = setTimeout(() => {
+      setLeaving(true)
+      setTimeout(() => onCompleteRef.current(), 450)
+    }, 5000)
+    return () => clearTimeout(t)
+  }, [leaving])
+
   return (
     <AnimatePresence>
       {!leaving && (
