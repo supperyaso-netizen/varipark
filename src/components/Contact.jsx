@@ -50,7 +50,12 @@ export default function Contact() {
             <div className="space-y-6 md:space-y-8 mb-10 md:mb-14">
               {[
                 { label: 'Address', value: '41, Palani Road, New Agraharam, Dindigul — 624001, Tamil Nadu' },
-                { label: 'Phone', value: '+91 91500 07201', href: 'tel:+919150007201' },
+                {
+                  label: 'Phone',
+                  value: '+91 91500 07201',
+                  href: 'tel:+919150007201',
+                  secondary: { value: '+91 91500 07202', href: 'tel:+919150007202' },
+                },
                 { label: 'Check-In / Check-Out', value: '12:00 PM / 12:00 PM' },
               ].map((item, i) => (
                 <motion.div
@@ -62,15 +67,22 @@ export default function Contact() {
                   <p className="text-[9px] font-medium text-[rgba(245,245,240,0.25)] tracking-[0.2em] uppercase mb-1.5">
                     {item.label}
                   </p>
-                  {item.href ? (
-                    <a href={item.href} className="text-editorial text-[rgba(245,245,240,0.55)] text-[13px] hover:text-[#f5f5f0] transition-colors duration-300">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-editorial text-[rgba(245,245,240,0.55)] text-[13px]">
-                      {item.value}
-                    </p>
-                  )}
+                  <div>
+                    {item.href ? (
+                      <a href={item.href} className="text-editorial text-[rgba(245,245,240,0.55)] text-[13px] hover:text-[#f5f5f0] transition-colors duration-300 block">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-editorial text-[rgba(245,245,240,0.55)] text-[13px]">
+                        {item.value}
+                      </p>
+                    )}
+                    {item.secondary?.href && (
+                      <a href={item.secondary.href} className="text-editorial text-[rgba(245,245,240,0.55)] text-[13px] hover:text-[#f5f5f0] transition-colors duration-300 block">
+                        {item.secondary.value}
+                      </a>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>
