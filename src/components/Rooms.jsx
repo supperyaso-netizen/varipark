@@ -24,7 +24,7 @@ const rooms = [
     tagline: 'Living. Style. Generous.',
     sqft: '320 sq.ft',
     description: 'A generous living space combining comfort and style, ideal for extended stays and families.',
-    amenities: ['King Bed', 'Sitting Area', 'Work Station', 'Blackout Curtains', 'Streaming'],
+    amenities: ['King Bed', 'Sitting Area', 'Work Station', 'Blackout Curtains', 'Streaming', 'Intercom', 'Breakfast', 'Snacks'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247248/1247248960/vari-park-comfort-stay-dindigul-pic-9.JPEG',
   },
   {
