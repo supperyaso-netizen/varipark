@@ -13,7 +13,6 @@ const rooms = [
   {
     name: 'Superior Room',
     tagline: 'Space. Comfort. Refined.',
-    sqft: '280 sq.ft',
     description: 'A spacious retreat with a separate living area, fridge and cosy sofa, ideal for a relaxed, effortless stay.',
     amenities: ['Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365487/vari-park-comfort-stay-dindigul-pic-8.JPEG',
@@ -21,7 +20,6 @@ const rooms = [
   {
     name: 'Family Room – 3 Bed',
     tagline: 'Comfort. Family. Together.',
-    sqft: '320 sq.ft',
     description: 'Designed for families, this generous room features three beds, a fridge, a separate living room and a sofa for shared comfort.',
     amenities: ['3 Beds', 'Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247248/1247248960/vari-park-comfort-stay-dindigul-pic-9.JPEG',
@@ -29,7 +27,6 @@ const rooms = [
   {
     name: 'Family Room – 4 Bed',
     tagline: 'Space. Family. Freedom.',
-    sqft: '350 sq.ft',
     description: 'Our largest family option with four beds, a fridge, a separate living room and a sofa — spacious and welcoming for the whole family.',
     amenities: ['4 Beds', 'Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250934/1250934655/vari-park-comfort-stay-dindigul-pic-10.JPEG',
