@@ -5,6 +5,8 @@ export default function LoadingScreen({ onComplete, contentReady }) {
   const [progress, setProgress] = useState(0)
   const [leaving, setLeaving] = useState(false)
   const onCompleteRef = useRef(onComplete)
+  const completedRef = useRef(false)
+  const timersRef = useRef([])
 
   useEffect(() => {
     onCompleteRef.current = onComplete
@@ -25,12 +27,14 @@ export default function LoadingScreen({ onComplete, contentReady }) {
   }, [])
 
   useEffect(() => {
-    if (progress >= 100 && contentReady && !leaving) {
-      const t1 = setTimeout(() => setLeaving(true), 250)
-      const t2 = setTimeout(() => onCompleteRef.current(), 700)
-      return () => { clearTimeout(t1); clearTimeout(t2) }
+    if (progress >= 100 && contentReady && !completedRef.current) {
+      completedRef.current = true
+      timersRef.current.push(
+        setTimeout(() => setLeaving(true), 250),
+        setTimeout(() => onCompleteRef.current(), 700)
+      )
     }
-  }, [progress, contentReady, leaving])
+  }, [progress, contentReady])
 
   useEffect(() => {
     if (leaving) return
@@ -40,6 +44,13 @@ export default function LoadingScreen({ onComplete, contentReady }) {
     }, 5000)
     return () => clearTimeout(t)
   }, [leaving])
+
+  useEffect(() => {
+    const timers = timersRef.current
+    return () => {
+      timers.forEach(clearTimeout)
+    }
+  }, [])
 
   return (
     <AnimatePresence>
