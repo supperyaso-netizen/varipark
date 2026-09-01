@@ -215,6 +215,15 @@ export default function Rooms({ onImageClick }) {
                     Complimentary parking facility available for guests
                   </p>
                 </div>
+
+                <div className="flex items-center gap-2 mt-3">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[rgba(245,245,240,0.3)] flex-none">
+                    <path d="M12 3l2.5 4.5H9.5L12 3zM12 21l-2.5-4.5h5L12 21zM6.5 9.5h11M7 14h10" />
+                  </svg>
+                  <p className="text-[10px] font-light text-[rgba(245,245,240,0.3)] tracking-[0.05em]">
+                    Passenger lift available 24 hours
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
