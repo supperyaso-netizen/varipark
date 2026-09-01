@@ -67,6 +67,9 @@ export default function Footer() {
               <a href="tel:+919150007201" className="text-editorial text-[rgba(245,245,240,0.3)] text-[12px] hover:text-[#f5f5f0] transition-colors">
                 +91 91500 07201
               </a>
+              <a href="tel:+919150007202" className="text-editorial text-[rgba(245,245,240,0.3)] text-[12px] hover:text-[#f5f5f0] transition-colors">
+                +91 91500 07202
+              </a>
               <a href="mailto:variparkfo@gmail.com" className="text-editorial text-[rgba(245,245,240,0.3)] text-[12px] hover:text-[#f5f5f0] transition-colors">
                 variparkfo@gmail.com
               </a>
