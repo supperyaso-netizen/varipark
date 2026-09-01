@@ -6,7 +6,6 @@ const rooms = [
   {
     name: 'Deluxe Room',
     tagline: 'Comfort. Simplicity. Essential.',
-    sqft: '225 sq.ft',
     description: 'A thoughtfully appointed room offering modern comfort, city views, and everything you need for a restful stay.',
     amenities: ['King Bed', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243173/vari-park-comfort-stay-dindigul-pic-7.JPEG',
@@ -175,11 +174,13 @@ export default function Rooms({ onImageClick }) {
                   {room.description}
                 </p>
 
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-[11px] font-medium text-[rgba(245,245,240,0.5)] tracking-[0.1em] uppercase">
-                    {room.sqft}
-                  </span>
-                </div>
+                {room.sqft && (
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-[11px] font-medium text-[rgba(245,245,240,0.5)] tracking-[0.1em] uppercase">
+                      {room.sqft}
+                    </span>
+                  </div>
+                )}
 
                 <div className="mb-8">
                   <p className="text-[9px] font-medium text-[rgba(245,245,240,0.25)] tracking-[0.2em] uppercase mb-3">
