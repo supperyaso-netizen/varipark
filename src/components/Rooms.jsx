@@ -14,7 +14,7 @@ const rooms = [
     name: 'Superior Room',
     tagline: 'Space. Comfort. Refined.',
     description: 'A spacious retreat with a separate living area, fridge and cosy sofa, ideal for a relaxed, effortless stay.',
-    amenities: ['Fridge', 'Living Room', 'Sofa'],
+    amenities: ['Fridge', 'Living Room', 'Sofa', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining', 'Intercom', 'Breakfast', 'Snacks'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365487/vari-park-comfort-stay-dindigul-pic-8.JPEG',
   },
   {
