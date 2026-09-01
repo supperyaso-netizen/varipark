@@ -56,6 +56,7 @@ export default function Contact() {
                   href: 'tel:+919150007201',
                   secondary: { value: '+91 91500 07202', href: 'tel:+919150007202' },
                 },
+                { label: 'Email', value: 'variparkfo@gmail.com', href: 'mailto:variparkfo@gmail.com' },
                 { label: 'Check-In / Check-Out', value: '12:00 PM / 12:00 PM' },
               ].map((item, i) => (
                 <motion.div
