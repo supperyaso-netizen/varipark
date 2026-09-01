@@ -30,10 +30,7 @@ function GalleryItem({ img, index, inView, onImageClick }) {
         decoding="async"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,5,0.6)] via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between opacity-0 hover:opacity-100 transition-opacity duration-500">
-        <p className="text-[10px] font-medium text-[rgba(245,245,240,0.7)] tracking-[0.1em] uppercase">
-          {img.alt}
-        </p>
+      <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-end opacity-0 hover:opacity-100 transition-opacity duration-500">
         <span className="text-[9px] font-medium text-[rgba(245,245,240,0.4)] tracking-[0.15em]">
           0{index + 1}
         </span>
