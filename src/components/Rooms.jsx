@@ -4,35 +4,35 @@ import { useInView } from '../hooks/useInView'
 
 const rooms = [
   {
-    name: 'Premium AC',
+    name: 'Deluxe Room',
     tagline: 'Comfort. Simplicity. Essential.',
     sqft: '225 sq.ft',
-    description: 'Elegantly appointed with modern amenities, city views, and everything you need for a comfortable stay.',
-    amenities: ['Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining'],
+    description: 'A thoughtfully appointed room offering modern comfort, city views, and everything you need for a restful stay.',
+    amenities: ['King Bed', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243173/vari-park-comfort-stay-dindigul-pic-7.JPEG',
   },
   {
-    name: 'Deluxe King',
-    tagline: 'Space. Premium. Refined.',
+    name: 'Superior Room',
+    tagline: 'Space. Comfort. Refined.',
     sqft: '280 sq.ft',
-    description: 'Spacious comfort with premium bedding, enhanced amenities, and thoughtful touches for the discerning traveler.',
-    amenities: ['King Bed', 'Mini Bar', 'Safe', 'Tea Maker', 'Premium Linens'],
+    description: 'A spacious retreat with a separate living area, fridge and cosy sofa, ideal for a relaxed, effortless stay.',
+    amenities: ['Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365487/vari-park-comfort-stay-dindigul-pic-8.JPEG',
   },
   {
-    name: 'King Studio',
-    tagline: 'Living. Style. Generous.',
+    name: 'Family Room – 3 Bed',
+    tagline: 'Comfort. Family. Together.',
     sqft: '320 sq.ft',
-    description: 'A generous living space combining comfort and style, ideal for extended stays and families.',
-    amenities: ['King Bed', 'Sitting Area', 'Work Station', 'Blackout Curtains', 'Streaming', 'Intercom', 'Breakfast', 'Snacks'],
+    description: 'Designed for families, this generous room features three beds, a fridge, a separate living room and a sofa for shared comfort.',
+    amenities: ['3 Beds', 'Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247248/1247248960/vari-park-comfort-stay-dindigul-pic-9.JPEG',
   },
   {
-    name: 'Junior Suite',
-    tagline: 'Finest. Separate. Premium.',
+    name: 'Family Room – 4 Bed',
+    tagline: 'Space. Family. Freedom.',
     sqft: '350 sq.ft',
-    description: 'The finest accommodation featuring a separate living area and premium furnishings throughout.',
-    amenities: ['Separate Living Area', 'King Bed', 'Sofa Bed', 'Luxury Bath', 'Concierge'],
+    description: 'Our largest family option with four beds, a fridge, a separate living room and a sofa — spacious and welcoming for the whole family.',
+    amenities: ['4 Beds', 'Fridge', 'Living Room', 'Sofa'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250934/1250934655/vari-park-comfort-stay-dindigul-pic-10.JPEG',
   },
 ]
@@ -208,6 +208,15 @@ export default function Rooms({ onImageClick }) {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </a>
+
+                <div className="flex items-center gap-2 mt-6 pt-5 border-t border-[rgba(245,245,240,0.05)]">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[rgba(245,245,240,0.3)] flex-none">
+                    <path d="M5 11h14M5 11c-.9 0-1.7-.7-1.7-1.6S4.7 7.8 5.6 7.8h12.8c.9 0 1.6.7 1.6 1.6s-.8 1.6-1.7 1.6M5 11v5a1.5 1.5 0 001.5 1.5h2A1.5 1.5 0 0010 16v-2h4v2a1.5 1.5 0 001.5 1.5h2A1.5 1.5 0 0019 16v-5" />
+                  </svg>
+                  <p className="text-[10px] font-light text-[rgba(245,245,240,0.3)] tracking-[0.05em]">
+                    Complimentary parking facility available for guests
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
