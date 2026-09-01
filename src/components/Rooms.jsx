@@ -53,7 +53,7 @@ export default function Rooms({ onImageClick }) {
   return (
     <section id="rooms" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
-        <div ref={headingRef} className="mb-8 md:mb-16 lg:mb-20">
+        <div ref={headingRef} className="mb-12 md:mb-16 lg:mb-20">
           <motion.p
             className="label-micro text-[rgba(245,245,240,0.35)] mb-5"
             initial={{ opacity: 0, y: 12 }}
