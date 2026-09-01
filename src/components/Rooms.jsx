@@ -28,7 +28,7 @@ const rooms = [
     name: 'Family Room – 4 Bed',
     tagline: 'Space. Family. Freedom.',
     description: 'Our largest family option with four beds, a fridge, a separate living room and a sofa — spacious and welcoming for the whole family.',
-    amenities: ['4 Beds', 'Fridge', 'Living Room', 'Sofa'],
+    amenities: ['4 Beds', 'Air Conditioning', 'Free Wi-Fi', 'Flat-Screen TV', 'Work Desk', 'In-Room Dining', 'Intercom', 'Breakfast', 'Snacks'],
     image: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250934/1250934655/vari-park-comfort-stay-dindigul-pic-10.JPEG',
   },
 ]
