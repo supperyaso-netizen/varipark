@@ -108,7 +108,7 @@ export default function Restaurant({ onImageClick }) {
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            From traditional Tamil Nadu cuisine to pan-Indian favourites, our restaurant serves freshly prepared dishes with locally sourced ingredients.
+            From traditional Tamil Nadu cuisine to pan-Indian favourites, our multi-cuisine restaurant serves freshly prepared dishes with locally sourced ingredients.
           </motion.p>
 
           <motion.button
