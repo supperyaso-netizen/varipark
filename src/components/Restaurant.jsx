@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
+import restaurantBg from '../assets/restaurant-hero.jpg'
 
 const galleryImages = [
   { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365454/vari-park-comfort-stay-dindigul-pic-1.JPEG', alt: 'Restaurant interior ambiance' },
@@ -57,7 +58,7 @@ export default function Restaurant({ onImageClick }) {
       <div className="relative h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden">
         <motion.div style={{ y: bgY }} className="absolute inset-0 will-change-transform">
           <img
-            src="https://lh3.ggpht.com/p/AF1QipPSUaimeIu7RW8n7sWkz4MQ4H87OYcrXErmFebq=s1024"
+            src={restaurantBg}
             alt="Restaurant interior"
             className="w-full h-[120%] object-cover opacity-30"
             loading="lazy"
