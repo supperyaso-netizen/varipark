@@ -76,7 +76,7 @@ export default function Bar({ onImageClick }) {
             Bar
           </motion.p>
 
-          <div className="overflow-hidden pb-1 mb-6 md:mb-10">
+          <div className="mb-6 md:mb-10">
             <motion.h2
               className="text-display text-[clamp(36px,7vw,96px)] text-[#f5f5f0] leading-[0.95]"
               initial={{ y: '110%', opacity: 0 }}
