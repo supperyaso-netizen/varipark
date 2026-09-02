@@ -6,14 +6,14 @@ import hall2Img from '../assets/bar2.jpg'
 
 const halls = [
   {
-    name: 'Grand Hall',
+    name: 'Vari Park Grand Hall',
     capacity: '115 – 130 Guests',
     tagline: 'Celebrations. Gatherings. Occasions.',
     features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
     image: hall1Img,
   },
   {
-    name: 'Intimate Hall',
+    name: 'Vari Park Mini Hall',
     capacity: '50 – 65 Guests',
     tagline: 'Quiet. Personal. Memorable.',
     features: ['Stage & Sound', 'Event Staff', 'Dedicated Catering'],
@@ -31,8 +31,8 @@ function HallCard({ hall, index, inView }) {
     >
       <div className="relative overflow-hidden aspect-[4/3]">
         <motion.img
-          src={hall.image}
-          alt={`${hall.name} at Vari Park`}
+            src={hall.image}
+              alt={hall.name}
           className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
           loading="lazy"
           decoding="async"
