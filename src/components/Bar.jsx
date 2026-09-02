@@ -83,7 +83,7 @@ export default function Bar({ onImageClick }) {
               animate={headingInView ? { y: '0%', opacity: 1 } : {}}
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              After Dark
+              Ignite Bar
             </motion.h2>
           </div>
 
