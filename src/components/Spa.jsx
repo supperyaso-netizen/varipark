@@ -20,17 +20,6 @@ export default function Spa() {
                Spa
             </motion.p>
 
-            <div className="overflow-hidden mb-2">
-              <motion.h2
-                className="text-display text-[clamp(32px,5vw,56px)] text-[#f5f5f0] leading-[1]"
-                initial={{ y: '110%', opacity: 0 }}
-                animate={headingInView ? { y: '0%', opacity: 1 } : {}}
-                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              >
-                Slow Down
-              </motion.h2>
-            </div>
-
             <motion.div
               className="divider-line mx-auto my-6 md:my-8"
               initial={{ scaleX: 0 }}
