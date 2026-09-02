@@ -68,7 +68,7 @@ export default function LoadingScreen({ onComplete, contentReady }) {
               className="overflow-hidden"
             >
               <img
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Vari Park"
                 className="h-9 md:h-10 w-auto"
               />

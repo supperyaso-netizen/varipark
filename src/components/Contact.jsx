@@ -39,14 +39,6 @@ export default function Contact() {
               </motion.h2>
             </div>
 
-            <motion.div
-              className="divider-line mb-8 md:mb-10"
-              initial={{ scaleX: 0 }}
-              animate={inView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              style={{ transformOrigin: 'left' }}
-            />
-
             <div className="space-y-6 md:space-y-8 mb-10 md:mb-14">
               {[
                 { label: 'Address', value: '41, Palani Road, New Agraharam, Dindigul — 624001, Tamil Nadu' },

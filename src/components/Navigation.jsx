@@ -91,7 +91,7 @@ export default function Navigation() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between h-14 md:h-16 lg:h-20">
           <a href="#hero" className="relative z-10 flex items-center" onClick={(e) => { e.preventDefault(); scrollTo('#hero', 'Home') }}>
             <img
-              src="/logo.png"
+              src="/logo2.png"
               alt="Vari Park"
               className="h-7 md:h-8 w-auto transition-all duration-500"
             />

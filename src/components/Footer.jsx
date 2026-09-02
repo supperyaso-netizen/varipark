@@ -26,7 +26,7 @@ export default function Footer() {
               className={`transition-opacity duration-700 ${inView ? 'opacity-100' : 'opacity-0'}`}
             >
               <img
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Vari Park"
                 className="h-8 md:h-9 w-auto"
               />
