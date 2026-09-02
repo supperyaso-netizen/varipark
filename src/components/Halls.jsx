@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import hall1Img from '../assets/hall1.jpg'
 import hall2Img from '../assets/minihall.jpg'
@@ -99,28 +99,8 @@ export default function Halls() {
   const [headingRef, headingInView] = useInView({ threshold: 0.15 })
   const [gridRef, gridInView] = useInView({ threshold: 0.1 })
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const bgY = useTransform(scrollYProgress, [0, 1], [40, -40])
-
   return (
     <section id="halls" ref={sectionRef} className="relative bg-[#050505] overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div style={{ y: bgY }} className="absolute -top-40 right-0 w-[40%] h-[60%] opacity-[0.04]">
-          <motion.img
-            src={hall1Img}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </motion.div>
-      </div>
-
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
         <div ref={headingRef} className="mb-12 md:mb-16 lg:mb-20 max-w-3xl">
           <motion.p
