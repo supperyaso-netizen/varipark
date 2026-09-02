@@ -2,13 +2,14 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import restaurantBg from '../assets/restaurantbg.jpg'
+import gallery1 from '../assets/1.jpg'
+import gallery2 from '../assets/2.jpg'
+import gallery3 from '../assets/3.jpg'
 
 const galleryImages = [
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/11553/1155365/1155365454/vari-park-comfort-stay-dindigul-pic-1.JPEG', alt: 'Restaurant interior ambiance' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247244/1247244316/vari-park-comfort-stay-dindigul-pic-2.JPEG', alt: 'Fine dining plate presentation' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250928/1250928535/vari-park-comfort-stay-dindigul-pic-3.JPEG', alt: 'Chef preparing dishes' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12472/1247243/1247243197/vari-park-comfort-stay-dindigul-pic-4.JPEG', alt: 'Restaurant table setting' },
-  { src: 'https://vari-park.hotelsintamilnadu.com/data/Pics/OriginalPhoto/12509/1250909/1250909032/vari-park-comfort-stay-dindigul-pic-5.JPEG', alt: 'Culinary experience' },
+  { src: gallery1 },
+  { src: gallery2 },
+  { src: gallery3 },
 ]
 
 function GalleryItem({ img, index, inView, onImageClick }) {
