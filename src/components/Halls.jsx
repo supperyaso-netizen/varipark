@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import hall1Img from '../assets/hall1.jpg'
-import hall2Img from '../assets/bar2.jpg'
+import hall2Img from '../assets/minihall.jpg'
 
 const halls = [
   {
